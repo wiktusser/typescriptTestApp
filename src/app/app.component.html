@@ -1,0 +1,55 @@
+<h1>
+  {{title}}
+</h1>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<div ng-app="myApp">
+<div class="container" ng-controller="Ctrl_List">
+  <div class="row">
+    <div class="col-md-12">
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6" ng-repeat="currencies in currencies">      
+      <div class="b-component">
+  <div class="b-component-header">{{currencies.pair}}</div>
+  <div class="b-field"> 
+        <div class="b-field-values">
+      <div class="top">Sell {{currencies.pair.split(' ')[0]}}</div>
+      <div class="bottom">
+          
+          <div class="beginning">{{splitToStrings(currencies.sell,0 ,4)}}</div>
+        <div class="middle">{{splitToStrings(currencies.sell,4 ,6)}}</div>
+        <div class="end">{{splitToStrings(currencies.sell,6 ,7)}}
+        {{checkValueLength(currencies.sell)}}
+        </div></div>
+    </div>  
+</div> 
+  <div class="b-arrow">
+    <div class="down"></div>
+    <div class="up"></div>
+        </div>
+        
+        
+  <div class="b-field b-field-right">
+    <div class="b-field-values">
+    <div class="top">Buy {{currencies.pair.split(' ')[0]}}</div>
+      <div class="bottom">
+        <div class="beginning">{{splitToStrings(currencies.buy,0 ,4)}}</div>
+        <div class="middle">{{splitToStrings(currencies.buy,4 ,6)}}</div>
+        <div class="end">{{splitToStrings(currencies.buy,6 ,7)}}</div>
+      </div>
+    </div>
+  </div>
+</div>  
+      
+      
+</div>
+
+  </div>
+</div>
+  </div>
+
