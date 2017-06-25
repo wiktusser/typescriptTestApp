@@ -4,11 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { FormatNumberPipe } from './format-number.pipe';
+import { SplitNumberPipe } from './split-number.pipe';
 // import currenciesData from './currencies.data'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormatNumberPipe,
+    SplitNumberPipe
   ],
   imports: [
     BrowserModule,
