@@ -1,52 +1,45 @@
-
-
 <div ng-app="myApp">
-<div class="container">
+  <div class="container">
 
 
-  <div class="row">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="b-component" *ngFor="let currency of currencies">
+          <div class="b-component-header">{{currency.pair}}</div>
+          <div class="b-field b-field-left">
+            <div class="b-field-values">
+              <div class="top">Sell {{currency.pair.split(' ')[0]}}</div>
+              <div class="bottom">
+
+                <div class="beginning">{{currency.sell | formatNumber | splitNumber: 0:4}}</div>
+                <div class="middle">{{currency.sell | formatNumber | splitNumber: 4:6}}</div>
+                <div class="end">{{currency.sell | formatNumber | splitNumber: 6:7}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="b-arrow-container">
+            <div class="b-arrow" [ngClass]="(currency.indicator)?'b-arrow-up':'b-arrow-down'"></div>
+          </div>
 
 
+          <div class="b-field b-field-right">
+            <div class="b-field-values">
+              <div class="top">Buy {{currency.pair.split(' ')[0]}}</div>
+              <div class="bottom">
 
-    <div class="col-md-6">      
-      <div class="b-component" *ngFor="let currency of currencies">
-  <div class="b-component-header">{{currency.pair}}</div>
-  <div class="b-field"> 
-        <div class="b-field-values">
-      <div class="top">Sell {{currency.pair.split(' ')[0]}}</div>
-      <div class="bottom">
-          
-          <div class="beginning">{{currency.sell | formatNumber | splitNumber: 0:4}}</div>
-        <div class="middle">{{currency.sell | formatNumber | splitNumber: 4:6}}</div>
-        <div class="end">{{currency.sell | formatNumber | splitNumber: 6:7}}
+                <div class="beginning">{{currency.buy | formatNumber | splitNumber: 0:4}}</div>
+                <div class="middle">{{currency.buy | formatNumber | splitNumber: 4:6}}</div>
+                <div class="end">{{currency.buy | formatNumber | splitNumber: 6:7}}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
-    </div>  
-</div> 
-  <div class="b-arrow">
-    <div class="down"></div>
-    <div class="up"></div>
-        </div>
-        
-        
-  <div class="b-field b-field-right">
-    <div class="b-field-values">
-    <div class="top">Buy {{currency.pair.split(' ')[0]}}</div>
-      <div class="bottom">
-          
-          <div class="beginning">{{currency.buy | formatNumber | splitNumber: 0:4}}</div>
-        <div class="middle">{{currency.buy | formatNumber | splitNumber: 4:6}}</div>
-        <div class="end">{{currency.buy | formatNumber | splitNumber: 6:7}}
-        </div>
-        </div>
+
+
+      </div>
+
     </div>
   </div>
-</div>  
-      
-      
 </div>
-
-  </div>
-</div>
-  </div>
-
